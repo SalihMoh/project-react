@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'; // Notice the change here
 import App from './App';
 import { BrowserRouter  , Routes , Route } from 'react-router-dom';
 
-import ProductAction from './components/ProductAction'; // Import the ProductAction component
+import Addproduct from './components/Addproduct'; // Import the ProductAction component
 import DisplayProducts  from './components/Products';
 import Header from './components/Header' ;
 
@@ -23,7 +23,7 @@ rootproductdisplay.render(
     <BrowserRouter>
      <Routes> 
        <Route path="/" element={ [<Header />,<DisplayProducts />]} />
-       <Route path="/Addform" element={[<Header />, <ProductAction />]} />
+       <Route path="/Addform" element={[<Header />, <Addproduct />]} />
        
      </Routes>
     </BrowserRouter>

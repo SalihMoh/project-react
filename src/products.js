@@ -1,4 +1,4 @@
-[
+export const data =[
     {
         "id":1,
         "product_name" : "product1",

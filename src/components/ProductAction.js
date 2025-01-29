@@ -1,68 +1,39 @@
-import React , {useState} from 'react';
+import React, { useState } from 'react';
 
-const FormTest = () => { 
-    const [ productname , setproductname ] = useState('');
-    const [ price, setprice ] = useState('');
-    const [ stock, setstock ] = useState('');
-    const [ mark, setmark] = useState('');
-    const [ descr, setdescr ] = useState('');
-    const [ image, setimage ] = useState('');
-    const [ product , setproduct ] = useState([
-        {
-        "id" : "" , 
-        "product_name" : "" , 
-        "mark_product":"",
-        "description":"",
-        "prix":0 ,
-        "stock":0 , 
-        "image":""
-        }
-])
+const ProductAction = ({ product, onUpdate, onDelete }) => {
+    const [productName, setProductName] = useState(product.product_name);
+    const [price, setPrice] = useState(product.prix);
+    const [description, setDescription] = useState(product.description);
+    const [stock, setStock] = useState(product.stock || 0);
+    const [mark, setMark] = useState(product.mark_product || '');
+    const [image, setImage] = useState(product.image || '');
 
-
-    const handlesubmit = (event) => {
+    const handleUpdate = (event) => {
         event.preventDefault();
-        console.log('Pr_Name' , productname)
-        console.log('Price' , price)
-        console.log('Stock' , stock)
-        console.log('Mark' , mark)
-        console.log('Descr' , descr)
-
+        const updatedProduct = {
+            ...product,
+            product_name: productName,
+            prix: price,
+            description: description,
+            stock: stock,
+            mark_product: mark,
+            image: image
+        };
+        onUpdate(updatedProduct);
     };
+
+    const handleDelete = () => {
+        onDelete(product.id);
+    };
+
     return (
-        <form onSubmit={handlesubmit}>
-            <div className='formAdd'>
-                <table>
-                <tr>
-                <td><label htmlFor='setproductname'> Product Name :</label></td>
-                <td><input type="text" id='name' value={productname} onChange={(e) => setproductname(e.target.value)} /></td>
-                </tr>
-                <tr>
-                    <td><label htmlFor='setdescr' >description :</label></td>
-                    <td><input type='text' id='descr' value={descr} onChange={(e) => setdescr(e.target.value)} /></td>
-                </tr>
-                <tr>
-                    <td><label htmlFor='setprice' >Price :</label></td>
-                    <td><input type='number' id='price' value={price} onChange={(e) => setprice(e.target.value)} /></td>
-                </tr>
-                <tr>
-                    <td><label htmlFor='setStock' >Stock :</label></td>
-                    <td><input type='number' id='stock' value={stock} onChange={(e) => setstock(e.target.value)} /></td>
-                </tr>
-                <tr>
-                    <td><label htmlFor='setmark' >mark :</label></td>
-                    <td><input type='text' id='decr' value={mark} onChange={(e) => setmark(e.target.value)} /></td>
-                </tr>
+        <div>
+            <form>
+                <button type='button' onClick={handleDelete}>Delete</button>
+                <button>update</button>
+            </form>
+        </div>
+    );
+};
 
-                </table>
-                
-            </div>
-           <button type='submit'>Submit</button>
-        </form>
-     )
-
-
-    
-}
-export default FormTest ;
-
+export default ProductAction;
