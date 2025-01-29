@@ -1,0 +1,31 @@
+body {
+  background-color: rgb(222, 223, 219);
+  margin: 0 ;
+  padding: 0;
+} 
+nav {margin-top: 0;}
+nav > ul{
+  padding: 0.2cm;
+  margin-inline: 5cm;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  list-style: none;
+  text-align: center;
+  color: white ;
+}
+.Navigation-bar  {
+background-color: black;
+}
+
+nav ul li a{
+  color:white;
+  text-decoration: none;
+  transition: 1s;
+
+}
+nav ul li a:hover {
+  color: rgb(230, 14, 14);
+}
