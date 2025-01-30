@@ -1,21 +1,25 @@
-// src/App.js
 import React from 'react';
-import Header from './components/Header'; 
-import Body from './components/Body'// Correct path to the Header component
-import Products from './components/Products' // Correct path to the Products component
-import FormTest from './components/ProductAction'
-import { BrowserRouter , Routes , Route } from 'react-router-dom';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';  
+import {store} from './components/store';  
+import Header from './components/Header';
+import DisplayProducts from './DisplayProducts';
+import UpdateForm from './UpdateForm';
+import AddForm from './AddForm'; 
 
+const root = document.getElementById('root');
 
-
-function App() {
-  return (
-    <div>
-    </div>
+if (root) {
+  const rootElement = ReactDOM.createRoot(root);
+  rootElement.render(
+    <Provider store={store}>
+      <BrowserRouter>
+      
+        <Header />
+      </BrowserRouter>
+    </Provider>
   );
+} else {
+  console.error("Root element not found");
 }
-
-
-
-export default App;
-

@@ -1,35 +1,35 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client'; // Notice the change here
-import App from './App';
-import { BrowserRouter  , Routes , Route } from 'react-router-dom';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter , Router , Routes , Route} from 'react-router-dom';  
+import Header from './components/Header';
+import Body from './components/Body';
+import DisplayProducts from './components/Products';
+import { Provider } from 'react-redux';
+import {store} from './components/store'; 
+import AddForm from './components/AddForm';
 
-import Addproduct from './components/Addproduct'; // Import the ProductAction component
-import DisplayProducts  from './components/Products';
-import Header from './components/Header' ;
-
-const root = ReactDOM.createRoot(document.getElementById('root-header')); // Use createRoot()
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-const rootproductdisplay = ReactDOM.createRoot(document.getElementById('root-productdisplay'));
+import UpdateForm from './components/UpdateForm'; 
 
 
+const root = document.getElementById('root');
 
-rootproductdisplay.render(
-  <React.StrictMode>
+if (root) {
+  const rootElement = ReactDOM.createRoot(root);
+  rootElement.render(
+    <Provider store={store}>
+      
     <BrowserRouter>
-     <Routes> 
-       <Route path="/" element={ [<Header />,<DisplayProducts />]} />
-       <Route path="/Addform" element={[<Header />, <Addproduct />]} />
-       
-     </Routes>
+    <Header />
+    <Body />
+      <Routes>
+        <Route path="/" element={<DisplayProducts />} />
+        <Route path="/update/:id" element={<UpdateForm />} />
+        <Route path="/AddForm" element={<AddForm />} />
+      </Routes>
     </BrowserRouter>
-  </React.StrictMode>
-)
-
-
-
+    </Provider>
+  );
+} else {
+  console.error("Root element not found");
+}
 

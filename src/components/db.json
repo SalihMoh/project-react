@@ -1,0 +1,21 @@
+{
+  "products": [
+    {
+      "id": "2",
+      "product_name": "Product2",
+      "prix": "2000",
+      "description": "Product 2 description",
+      "stock": 30,
+      "image": "image2.jpg"
+    },
+    {
+      "id": "5751",
+      "product_name": "test",
+      "prix": "5000000",
+      "description": "WA AKHIRAN KHDMATE",
+      "stock": "250",
+      "mark_product": "test",
+      "image": "image1.png"
+    }
+  ]
+}
