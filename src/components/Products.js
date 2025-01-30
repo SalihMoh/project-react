@@ -73,11 +73,14 @@ const DisplayProducts = () => {
               <p>{product.description}</p>
               <p>Prix : {product.prix} $</p>
             </div>
+            <div className='action-button'>
             <ProductAction 
               product={product} 
               onDelete={handleDelete} 
               onUpdate={() => handleUpdate(product.id)} 
             />
+            </div>
+            
           </div>
         ))
       )}
