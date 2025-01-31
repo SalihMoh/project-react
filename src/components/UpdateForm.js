@@ -61,7 +61,8 @@ const UpdateForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='form' onSubmit={handleSubmit}>
+      <h3>Editer un produit</h3>
       <input
         type="text"
         value={productName}

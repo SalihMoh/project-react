@@ -12,10 +12,19 @@
       "id": "5751",
       "product_name": "test",
       "prix": "5000000",
-      "description": "WA AKHIRAN KHDMATE",
+      "description": "this is description of product 2",
       "stock": "250",
       "mark_product": "test",
       "image": "image1.png"
+    },
+    {
+      "id": "882e",
+      "product_name": "produit 3",
+      "prix": "700",
+      "description": "test",
+      "stock": "0700",
+      "mark_product": "7520",
+      "image": "image"
     }
   ]
 }

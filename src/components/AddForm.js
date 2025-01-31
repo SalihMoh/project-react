@@ -26,9 +26,12 @@ const AddForm = () => {
   };
 
   return (
+   
     <form onSubmit={handleSubmit}>
 
-      <table className='addform'>
+      <table className='form'>
+      <h2>Ajouter un produit</h2>
+
         <tr>
           <td><input
         type="text"
@@ -39,45 +42,51 @@ const AddForm = () => {
       /></td>
         </tr>
       <tr>
-      <input
+        <td><input
         type="number"
         value={price}
         onChange={(e) => setPrice(e.target.value)}
         placeholder="Price"
         required
-      />
+      /></td>
+      
       </tr>
       <tr>
-      <textarea
+        <td><textarea
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         placeholder="Description"
-      />
+      /></td>
+      
       </tr>
-      <tr><input
+      
+      <tr><td><input
         type="number"
         value={stock}
         onChange={(e) => setStock(e.target.value)}
         placeholder="Stock"
-      /></tr>
+      /></td></tr>
       
       <tr>
-      <input
+        <td><input
         type="text"
         value={mark}
         onChange={(e) => setMark(e.target.value)}
         placeholder="Brand"
-      />
+      /></td>
+      
       </tr>
       <tr>
-      <input
+        <td> <input
         type="text"
         value={image}
         onChange={(e) => setImage(e.target.value)}
         placeholder="Image URL"
-      />
+      /></td>
+     
       </tr>
-      <tr><button type="submit">Add Product</button></tr>
+      <tr>
+        <button type="submit">Add Product</button></tr>
       
     </table>
     </form>
