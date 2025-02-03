@@ -15,7 +15,6 @@ if (root) {
   rootElement.render(
     <Provider store={store}>
       <BrowserRouter>
-      
         <Header />
       </BrowserRouter>
     </Provider>

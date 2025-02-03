@@ -9,6 +9,7 @@ import {store} from './components/store';
 import AddForm from './components/AddForm';
 
 import UpdateForm from './components/UpdateForm'; 
+import { DisplayUsers } from './components/Users';
 
 
 const root = document.getElementById('root');
@@ -25,6 +26,7 @@ if (root) {
         <Route path="/" element={<DisplayProducts />} />
         <Route path="/update/:id" element={<UpdateForm />} />
         <Route path="/AddForm" element={<AddForm />} />
+        <Route path="/users" element={<DisplayUsers />}></Route>
       </Routes>
     </BrowserRouter>
     </Provider>

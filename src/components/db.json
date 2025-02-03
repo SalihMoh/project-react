@@ -26,5 +26,32 @@
       "mark_product": "7520",
       "image": "image"
     }
+  ],
+  "users": [
+   {
+    "id":"1",
+    "user_name":"user1",
+    "email" : "email1@gmail.com",
+    "password":"password1",
+    "admin": true,
+    "Nb_Product_acheter": 0,
+    "Nb_Product_vendu":0 ,
+    "balance":0.0 ,
+    "purchat":[{}]  
+    
+   } ,
+   {
+    "id":"1",
+    "user_name":"user2",
+    "email" : "email1@gmail.com",
+    "password":"password1",
+    "admin": true,
+    "Nb_Product_acheter": 0,
+    "Nb_Product_vendu":0 ,
+    "balance":0.0 ,
+    "purchat":[{}]  
+    
+   }
   ]
+  
 }
